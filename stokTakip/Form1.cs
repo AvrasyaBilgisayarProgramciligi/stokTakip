@@ -16,5 +16,28 @@ namespace stokTakip
         {
             InitializeComponent();
         }
+
+        private void çıkışToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void stokGrişToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            stokGiris sg = new stokGiris();
+            sg.ShowDialog();
+        }
+
+        private void stokGüncellemeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            stokGuncelleme sg = new stokGuncelleme();
+            sg.ShowDialog();
+        }
+
+        private void stokTemizlemeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            stokTemizleme sg = new stokTemizleme();
+            sg.ShowDialog();
+        }
     }
 }
