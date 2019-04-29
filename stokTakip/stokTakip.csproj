@@ -138,8 +138,14 @@
     <Compile Include="stokTemizleme.Designer.cs">
       <DependentUpon>stokTemizleme.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="aylıkRaporlama.resx">
+      <DependentUpon>aylıkRaporlama.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="gunlukRaporlama.resx">
+      <DependentUpon>gunlukRaporlama.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -151,6 +157,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="senelikRaporlama.resx">
+      <DependentUpon>senelikRaporlama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="stokCinsEkleme.resx">
+      <DependentUpon>stokCinsEkleme.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="stokGiris.resx">
       <DependentUpon>stokGiris.cs</DependentUpon>
     </EmbeddedResource>

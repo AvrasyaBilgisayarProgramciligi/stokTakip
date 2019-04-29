@@ -39,5 +39,23 @@ namespace stokTakip
             stokTemizleme sg = new stokTemizleme();
             sg.ShowDialog();
         }
+
+        private void günlükRaporlamaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            gunlukRaporlama ar = new gunlukRaporlama();
+            ar.ShowDialog();
+        }
+
+        private void aylıkRaporlamaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            aylıkRaporlama ar = new aylıkRaporlama();
+            ar.ShowDialog();
+        }
+
+        private void senelikRaporlamaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            senelikRaporlama ar = new senelikRaporlama();
+            ar.ShowDialog();
+        }
     }
 }
