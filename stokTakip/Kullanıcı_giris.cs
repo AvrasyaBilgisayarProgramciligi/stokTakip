@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace stokTakip
 {
-    public partial class stokGiris : Form
+    public partial class Kullanıcı_giris : Form
     {
-        public stokGiris()
+        public Kullanıcı_giris()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            stokCinsEkleme sce = new stokCinsEkleme();
-            sce.ShowDialog();
         }
     }
 }

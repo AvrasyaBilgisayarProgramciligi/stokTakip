@@ -57,5 +57,59 @@ namespace stokTakip
             senelikRaporlama ar = new senelikRaporlama();
             ar.ShowDialog();
         }
+
+        private void gToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            GunlukStokMail gsm = new GunlukStokMail();
+            gsm.ShowDialog();
+        }
+
+        private void günlükSatışToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            günlükSatısMail gm = new günlükSatısMail();
+            gm.ShowDialog();
+        }
+
+        private void aylıkSatışToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            aylıkSatısMail gm = new aylıkSatısMail();
+            gm.ShowDialog();
+        }
+
+        private void senelikSatışToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            senelikSatısMail gm = new senelikSatısMail();
+            gm.ShowDialog();
+        }
+
+        private void aylıkStokToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AylıkStokMail asm = new AylıkStokMail();
+            asm.ShowDialog();
+        }
+
+        private void senelikStokToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SenelikStokMail ssm = new SenelikStokMail();
+            ssm.ShowDialog();
+        }
+
+        private void adminŞifreAyarlarıToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Admin_Sifre asi = new Admin_Sifre();
+            asi.ShowDialog();
+        }
+
+        private void kullanıcıBilgileriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            sifreİslemleri si = new sifreİslemleri();
+            si.ShowDialog();
+        }
+
+        private void mailİşlemleriToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            mailBilgileri mb = new mailBilgileri();
+            mb.ShowDialog();
+        }
     }
 }

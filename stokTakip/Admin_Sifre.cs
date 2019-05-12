@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace stokTakip
 {
-    public partial class kullanıcıAta : Form
+    public partial class Admin_Sifre : Form
     {
-        public kullanıcıAta()
+        public Admin_Sifre()
         {
             InitializeComponent();
         }

@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Admin_Sifre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin_Sifre.Designer.cs">
+      <DependentUpon>Admin_Sifre.cs</DependentUpon>
+    </Compile>
     <Compile Include="aylıkRaporlama.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -57,6 +63,12 @@
     </Compile>
     <Compile Include="aylıkSatısMail.Designer.cs">
       <DependentUpon>aylıkSatısMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AylıkStokMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AylıkStokMail.Designer.cs">
+      <DependentUpon>AylıkStokMail.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -70,17 +82,23 @@
     <Compile Include="gunlukRaporlama.Designer.cs">
       <DependentUpon>gunlukRaporlama.cs</DependentUpon>
     </Compile>
+    <Compile Include="GunlukStokMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GunlukStokMail.Designer.cs">
+      <DependentUpon>GunlukStokMail.cs</DependentUpon>
+    </Compile>
     <Compile Include="günlükSatısMail.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="günlükSatısMail.Designer.cs">
       <DependentUpon>günlükSatısMail.cs</DependentUpon>
     </Compile>
-    <Compile Include="kullanıcıAta.cs">
+    <Compile Include="Kullanıcı_giris.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="kullanıcıAta.Designer.cs">
-      <DependentUpon>kullanıcıAta.cs</DependentUpon>
+    <Compile Include="Kullanıcı_giris.Designer.cs">
+      <DependentUpon>Kullanıcı_giris.cs</DependentUpon>
     </Compile>
     <Compile Include="mailBilgileri.cs">
       <SubType>Form</SubType>
@@ -101,6 +119,12 @@
     </Compile>
     <Compile Include="senelikSatısMail.Designer.cs">
       <DependentUpon>senelikSatısMail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SenelikStokMail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SenelikStokMail.Designer.cs">
+      <DependentUpon>SenelikStokMail.cs</DependentUpon>
     </Compile>
     <Compile Include="sifreİslemleri.cs">
       <SubType>Form</SubType>
@@ -138,14 +162,35 @@
     <Compile Include="stokTemizleme.Designer.cs">
       <DependentUpon>stokTemizleme.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Admin_Sifre.resx">
+      <DependentUpon>Admin_Sifre.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="aylıkRaporlama.resx">
       <DependentUpon>aylıkRaporlama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="aylıkSatısMail.resx">
+      <DependentUpon>aylıkSatısMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AylıkStokMail.resx">
+      <DependentUpon>AylıkStokMail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="gunlukRaporlama.resx">
       <DependentUpon>gunlukRaporlama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GunlukStokMail.resx">
+      <DependentUpon>GunlukStokMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="günlükSatısMail.resx">
+      <DependentUpon>günlükSatısMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanıcı_giris.resx">
+      <DependentUpon>Kullanıcı_giris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mailBilgileri.resx">
+      <DependentUpon>mailBilgileri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -159,6 +204,15 @@
     </Compile>
     <EmbeddedResource Include="senelikRaporlama.resx">
       <DependentUpon>senelikRaporlama.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="senelikSatısMail.resx">
+      <DependentUpon>senelikSatısMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SenelikStokMail.resx">
+      <DependentUpon>SenelikStokMail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="sifreİslemleri.resx">
+      <DependentUpon>sifreİslemleri.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="stokCinsEkleme.resx">
       <DependentUpon>stokCinsEkleme.cs</DependentUpon>

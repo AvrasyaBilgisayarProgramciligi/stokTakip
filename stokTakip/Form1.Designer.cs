@@ -35,7 +35,6 @@
             this.stokGüncellemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stokTemizlemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.stokBilgileriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.stokCinsiEklemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.raporlamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.günlükRaporlamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aylıkRaporlamaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,8 +47,9 @@
             this.aylıkSatışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.senelikSatışToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.adminPaneliToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kullanıcıAtaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.şifreİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.adminŞifreAyarlarıToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.kullanıcıBilgileriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mailİşlemleriToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yedeklemeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.yazdırToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -81,8 +81,7 @@
             this.stokGrişToolStripMenuItem,
             this.stokGüncellemeToolStripMenuItem,
             this.stokTemizlemeToolStripMenuItem,
-            this.stokBilgileriToolStripMenuItem,
-            this.stokCinsiEklemeToolStripMenuItem});
+            this.stokBilgileriToolStripMenuItem});
             this.stokMenüsüToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stokMenüsüToolStripMenuItem.Image")));
             this.stokMenüsüToolStripMenuItem.Name = "stokMenüsüToolStripMenuItem";
             this.stokMenüsüToolStripMenuItem.Size = new System.Drawing.Size(125, 24);
@@ -119,13 +118,6 @@
             this.stokBilgileriToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.stokBilgileriToolStripMenuItem.Text = "Stok Bilgileri";
             // 
-            // stokCinsiEklemeToolStripMenuItem
-            // 
-            this.stokCinsiEklemeToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("stokCinsiEklemeToolStripMenuItem.Image")));
-            this.stokCinsiEklemeToolStripMenuItem.Name = "stokCinsiEklemeToolStripMenuItem";
-            this.stokCinsiEklemeToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.stokCinsiEklemeToolStripMenuItem.Text = "Stok Cinsi Ekleme";
-            // 
             // raporlamaToolStripMenuItem
             // 
             this.raporlamaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -141,7 +133,7 @@
             // 
             this.günlükRaporlamaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("günlükRaporlamaToolStripMenuItem.Image")));
             this.günlükRaporlamaToolStripMenuItem.Name = "günlükRaporlamaToolStripMenuItem";
-            this.günlükRaporlamaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.günlükRaporlamaToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.günlükRaporlamaToolStripMenuItem.Text = "Günlük Raporlama";
             this.günlükRaporlamaToolStripMenuItem.Click += new System.EventHandler(this.günlükRaporlamaToolStripMenuItem_Click);
             // 
@@ -149,7 +141,7 @@
             // 
             this.aylıkRaporlamaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aylıkRaporlamaToolStripMenuItem.Image")));
             this.aylıkRaporlamaToolStripMenuItem.Name = "aylıkRaporlamaToolStripMenuItem";
-            this.aylıkRaporlamaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.aylıkRaporlamaToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.aylıkRaporlamaToolStripMenuItem.Text = "Aylık Raporlama";
             this.aylıkRaporlamaToolStripMenuItem.Click += new System.EventHandler(this.aylıkRaporlamaToolStripMenuItem_Click);
             // 
@@ -157,7 +149,7 @@
             // 
             this.senelikRaporlamaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("senelikRaporlamaToolStripMenuItem.Image")));
             this.senelikRaporlamaToolStripMenuItem.Name = "senelikRaporlamaToolStripMenuItem";
-            this.senelikRaporlamaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.senelikRaporlamaToolStripMenuItem.Size = new System.Drawing.Size(208, 26);
             this.senelikRaporlamaToolStripMenuItem.Text = "Senelik Raporlama";
             this.senelikRaporlamaToolStripMenuItem.Click += new System.EventHandler(this.senelikRaporlamaToolStripMenuItem_Click);
             // 
@@ -179,48 +171,53 @@
             // 
             this.gToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("gToolStripMenuItem.Image")));
             this.gToolStripMenuItem.Name = "gToolStripMenuItem";
-            this.gToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.gToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.gToolStripMenuItem.Text = "Günlük Stok";
+            this.gToolStripMenuItem.Click += new System.EventHandler(this.gToolStripMenuItem_Click);
             // 
             // aylıkStokToolStripMenuItem
             // 
             this.aylıkStokToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aylıkStokToolStripMenuItem.Image")));
             this.aylıkStokToolStripMenuItem.Name = "aylıkStokToolStripMenuItem";
-            this.aylıkStokToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.aylıkStokToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.aylıkStokToolStripMenuItem.Text = "Aylık Stok";
+            this.aylıkStokToolStripMenuItem.Click += new System.EventHandler(this.aylıkStokToolStripMenuItem_Click);
             // 
             // senelikStokToolStripMenuItem
             // 
             this.senelikStokToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("senelikStokToolStripMenuItem.Image")));
             this.senelikStokToolStripMenuItem.Name = "senelikStokToolStripMenuItem";
-            this.senelikStokToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.senelikStokToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.senelikStokToolStripMenuItem.Text = "Senelik Stok";
+            this.senelikStokToolStripMenuItem.Click += new System.EventHandler(this.senelikStokToolStripMenuItem_Click);
             // 
             // günlükSatışToolStripMenuItem
             // 
             this.günlükSatışToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("günlükSatışToolStripMenuItem.Image")));
             this.günlükSatışToolStripMenuItem.Name = "günlükSatışToolStripMenuItem";
-            this.günlükSatışToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.günlükSatışToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.günlükSatışToolStripMenuItem.Text = "Günlük Satış";
+            this.günlükSatışToolStripMenuItem.Click += new System.EventHandler(this.günlükSatışToolStripMenuItem_Click);
             // 
             // aylıkSatışToolStripMenuItem
             // 
             this.aylıkSatışToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("aylıkSatışToolStripMenuItem.Image")));
             this.aylıkSatışToolStripMenuItem.Name = "aylıkSatışToolStripMenuItem";
-            this.aylıkSatışToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.aylıkSatışToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.aylıkSatışToolStripMenuItem.Text = "Aylık Satış";
+            this.aylıkSatışToolStripMenuItem.Click += new System.EventHandler(this.aylıkSatışToolStripMenuItem_Click);
             // 
             // senelikSatışToolStripMenuItem
             // 
             this.senelikSatışToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("senelikSatışToolStripMenuItem.Image")));
             this.senelikSatışToolStripMenuItem.Name = "senelikSatışToolStripMenuItem";
-            this.senelikSatışToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.senelikSatışToolStripMenuItem.Size = new System.Drawing.Size(166, 26);
             this.senelikSatışToolStripMenuItem.Text = "Senelik Satış";
+            this.senelikSatışToolStripMenuItem.Click += new System.EventHandler(this.senelikSatışToolStripMenuItem_Click);
             // 
             // adminPaneliToolStripMenuItem
             // 
             this.adminPaneliToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kullanıcıAtaToolStripMenuItem,
             this.şifreİşlemleriToolStripMenuItem,
             this.mailİşlemleriToolStripMenuItem});
             this.adminPaneliToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("adminPaneliToolStripMenuItem.Image")));
@@ -228,19 +225,29 @@
             this.adminPaneliToolStripMenuItem.Size = new System.Drawing.Size(128, 24);
             this.adminPaneliToolStripMenuItem.Text = "Admin Paneli";
             // 
-            // kullanıcıAtaToolStripMenuItem
-            // 
-            this.kullanıcıAtaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("kullanıcıAtaToolStripMenuItem.Image")));
-            this.kullanıcıAtaToolStripMenuItem.Name = "kullanıcıAtaToolStripMenuItem";
-            this.kullanıcıAtaToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
-            this.kullanıcıAtaToolStripMenuItem.Text = "Kullanıcı Ata";
-            // 
             // şifreİşlemleriToolStripMenuItem
             // 
+            this.şifreİşlemleriToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.adminŞifreAyarlarıToolStripMenuItem,
+            this.kullanıcıBilgileriToolStripMenuItem});
             this.şifreİşlemleriToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("şifreİşlemleriToolStripMenuItem.Image")));
             this.şifreİşlemleriToolStripMenuItem.Name = "şifreİşlemleriToolStripMenuItem";
             this.şifreİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.şifreİşlemleriToolStripMenuItem.Text = "Şifre İşlemleri";
+            // 
+            // adminŞifreAyarlarıToolStripMenuItem
+            // 
+            this.adminŞifreAyarlarıToolStripMenuItem.Name = "adminŞifreAyarlarıToolStripMenuItem";
+            this.adminŞifreAyarlarıToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.adminŞifreAyarlarıToolStripMenuItem.Text = "Admin Şifre Ayarları";
+            this.adminŞifreAyarlarıToolStripMenuItem.Click += new System.EventHandler(this.adminŞifreAyarlarıToolStripMenuItem_Click);
+            // 
+            // kullanıcıBilgileriToolStripMenuItem
+            // 
+            this.kullanıcıBilgileriToolStripMenuItem.Name = "kullanıcıBilgileriToolStripMenuItem";
+            this.kullanıcıBilgileriToolStripMenuItem.Size = new System.Drawing.Size(217, 26);
+            this.kullanıcıBilgileriToolStripMenuItem.Text = "Kullanıcı Şifre Ayarı";
+            this.kullanıcıBilgileriToolStripMenuItem.Click += new System.EventHandler(this.kullanıcıBilgileriToolStripMenuItem_Click);
             // 
             // mailİşlemleriToolStripMenuItem
             // 
@@ -248,6 +255,7 @@
             this.mailİşlemleriToolStripMenuItem.Name = "mailİşlemleriToolStripMenuItem";
             this.mailİşlemleriToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
             this.mailİşlemleriToolStripMenuItem.Text = "Mail Bilgileri";
+            this.mailİşlemleriToolStripMenuItem.Click += new System.EventHandler(this.mailİşlemleriToolStripMenuItem_Click);
             // 
             // yedeklemeToolStripMenuItem
             // 
@@ -276,6 +284,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(799, 410);
             this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -311,15 +320,15 @@
         private System.Windows.Forms.ToolStripMenuItem yedeklemeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem adminPaneliToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem çıkışToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem stokCinsiEklemeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aylıkStokToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem senelikStokToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem günlükSatışToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aylıkSatışToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem senelikSatışToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem kullanıcıAtaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem şifreİşlemleriToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mailİşlemleriToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem adminŞifreAyarlarıToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem kullanıcıBilgileriToolStripMenuItem;
     }
 }
 
