@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.OleDb;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,92 +26,105 @@ namespace stokTakip
 
         private void stokGrişToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            stokGiris sg = new stokGiris();
+            stokGiris sg = new stokGiris(this);
             sg.ShowDialog();
         }
 
         private void stokGüncellemeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            stokGuncelleme sg = new stokGuncelleme();
+            stokGuncelleme sg = new stokGuncelleme(this);
             sg.ShowDialog();
         }
 
         private void stokTemizlemeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            stokTemizleme sg = new stokTemizleme();
+            stokTemizleme sg = new stokTemizleme(this);
             sg.ShowDialog();
         }
-
-        private void günlükRaporlamaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RaporlamaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             gunlukRaporlama ar = new gunlukRaporlama();
             ar.ShowDialog();
         }
 
-        private void aylıkRaporlamaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Form1_Load(object sender, EventArgs e)
         {
-            aylıkRaporlama ar = new aylıkRaporlama();
-            ar.ShowDialog();
+            stokSorgu();
         }
 
-        private void senelikRaporlamaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void stokSorgu()
         {
-            senelikRaporlama ar = new senelikRaporlama();
-            ar.ShowDialog();
+            string sorgu, baglanti;
+            baglanti = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=stokTakip.accdb";
+            sorgu = "SELECT * FROM stok";
+            OleDbConnection baglan = new OleDbConnection(baglanti);
+            OleDbDataAdapter getir = new OleDbDataAdapter(sorgu, baglan);
+            baglan.Open();
+            DataSet goster = new DataSet();
+            getir.Fill(goster, "stok");
+            dataGridView1.DataSource = goster.Tables["stok"];
+            getir.Dispose();
+            baglan.Close();
         }
 
-        private void gToolStripMenuItem_Click(object sender, EventArgs e)
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
-            GunlukStokMail gsm = new GunlukStokMail();
-            gsm.ShowDialog();
+            Application.Exit();
         }
 
-        private void günlükSatışToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SatışlarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            günlükSatısMail gm = new günlükSatısMail();
-            gm.ShowDialog();
+            UrunSatis urun = new UrunSatis(this);
+            urun.ShowDialog();
         }
 
-        private void aylıkSatışToolStripMenuItem_Click(object sender, EventArgs e)
+        private void YazdırToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            aylıkSatısMail gm = new aylıkSatısMail();
-            gm.ShowDialog();
+            printDocument1.Print();
         }
 
-        private void senelikSatışToolStripMenuItem_Click(object sender, EventArgs e)
+        private void PrintDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
-            senelikSatısMail gm = new senelikSatısMail();
-            gm.ShowDialog();
+            int columnPosition = 0;
+            int rowPosition = 25;
+
+            DrawHeader(new Font(this.Font, FontStyle.Bold), e.Graphics, ref columnPosition, ref rowPosition);
+
+            rowPosition += 35;
+
+            DrawGridBody(e.Graphics, ref columnPosition, ref rowPosition);
         }
 
-        private void aylıkStokToolStripMenuItem_Click(object sender, EventArgs e)
+        private int DrawHeader(Font boldFont, Graphics g, ref int columnPosition, ref int rowPosition)
         {
-            AylıkStokMail asm = new AylıkStokMail();
-            asm.ShowDialog();
+            foreach (DataGridViewColumn dc in dataGridView1.Columns)
+            {
+
+                g.DrawString(dc.HeaderText, boldFont, Brushes.Black, (float)columnPosition, (float)rowPosition);
+                columnPosition += dc.Width + 5;
+            }
+
+            return columnPosition;
         }
 
-        private void senelikStokToolStripMenuItem_Click(object sender, EventArgs e)
+        private void DrawGridBody(Graphics g, ref int columnPosition, ref int rowPosition)
         {
-            SenelikStokMail ssm = new SenelikStokMail();
-            ssm.ShowDialog();
+            foreach (DataRow dr in ((DataTable)dataGridView1.DataSource).Rows)
+            {
+                columnPosition = 0;
+                g.DrawLine(Pens.Black, new Point(0, rowPosition), new Point(this.Width, rowPosition));
+
+                foreach (DataGridViewColumn dc in dataGridView1.Columns)
+                {
+                    string text = dr[dc.DataPropertyName].ToString();
+                    g.DrawString(text, this.Font, Brushes.Black, (float)columnPosition, (float)rowPosition + 10f);
+
+                    columnPosition += dc.Width + 5;
+                }
+
+                rowPosition = rowPosition + 35; 
+            }
         }
 
-        private void adminŞifreAyarlarıToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Admin_Sifre asi = new Admin_Sifre();
-            asi.ShowDialog();
-        }
-
-        private void kullanıcıBilgileriToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            sifreİslemleri si = new sifreİslemleri();
-            si.ShowDialog();
-        }
-
-        private void mailİşlemleriToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            mailBilgileri mb = new mailBilgileri();
-            mb.ShowDialog();
-        }
     }
 }
