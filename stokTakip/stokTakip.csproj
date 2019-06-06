@@ -167,5 +167,14 @@
   <ItemGroup>
     <None Include="Resources\money-exchange.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-customer-filled-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-customer-filled-501.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-lock-52.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
